@@ -6,12 +6,13 @@
       .form-control-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
 
         .h-45 {
           height: 45px;
 
           input {
-            height: 45px;
             display: block;
           }
         }
@@ -53,7 +54,6 @@
 
   .list-item-container {
     width: 100%;
-    height: 50px;
 
     .list-item {
       display: flex;

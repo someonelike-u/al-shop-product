@@ -43,7 +43,7 @@ import { TableActionsCellComponent } from './ui/table/table-actions-cell/table-a
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    PrimeNGModule,
+    PrimeNGModule
   ],
   exports: [
     CommonModule,
