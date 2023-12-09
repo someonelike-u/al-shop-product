@@ -1,7 +1,15 @@
 .app-header {
-    height: 50px;
-    margin-left: 60px;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+  height: 50px;
+  margin-left: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.main-content {
+  margin-left: 60px;
+  transition: all 0.3s;
+
+  margin-top: 57px;
+  padding-bottom: 7px;
 }

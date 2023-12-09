@@ -8,6 +8,7 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { AppComponent } from 'app/app.component';
 import { BaseModule } from 'app/base/base.module';
 import { SharedModule } from 'app/shared/shared.module';
+import { ProductService } from './product/product.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { SharedModule } from 'app/shared/shared.module';
     BaseModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'en' }
+    { provide: LOCALE_ID, useValue: 'en' },
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

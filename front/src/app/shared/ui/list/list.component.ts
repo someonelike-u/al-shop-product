@@ -79,7 +79,7 @@ export class ListComponent<T> implements OnInit {
       if (this.backEndSearch) {
         this.emitFilters();
       } else {
-        this.dv.filter(term);
+        this.dv.filter(term, 'contains');
       }
     });
 

@@ -10,7 +10,7 @@ const TRANSPARENT_NAV_PAGES = [ 'login' ];
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   @HostBinding('class.transparent') transparent = false;
 
@@ -28,7 +28,4 @@ export class AppComponent implements OnInit {
     return this.sidenavService.getPinned();
   }
 
-  ngOnInit() {
-    
-  }
 }
