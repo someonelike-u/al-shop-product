@@ -79,6 +79,7 @@ export class TableComponent<T> implements OnChanges {
   public onDeleteMultiple(): void {
     const ids = this.selectedEntries.map(entry => entry.id);
     this.deleted.emit(ids);
+    this.selectedEntries= [];
   }
 
   public manageColumns(): void {

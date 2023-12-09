@@ -1,4 +1,4 @@
-export interface Product {
+export class Product {
   id: number;
   code: string;
   name: string;
@@ -9,4 +9,6 @@ export interface Product {
   category: string;
   image?: string;
   rating?: number;
+
+  constructor() {}
 }

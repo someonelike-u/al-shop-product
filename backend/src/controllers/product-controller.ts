@@ -11,6 +11,18 @@ function findProductByID(id: number) {
   return productsData.find(product => product.id === id);
 }
 
+function generateRandomString() {
+  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let randomString = '';
+
+  for (let i = 0; i < 9; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomString += characters.charAt(randomIndex);
+  }
+
+  return randomString;
+}
+
 export function init() {
   try {
     const data = fs.readFileSync(productsFilePath, 'utf8');
@@ -29,6 +41,20 @@ export function addProduct(req: Request, res: Response) {
   const isDuplicatedProduct = findProductByID(req.body.id);
   if (isDuplicatedProduct) {
     return res.status(404).json({ error: 'A product with the same ID already exists' });
+  }
+
+  if (!newProduct.id) {
+    let latestElement = 1000 + productsData.length;
+    let index = productsData.findIndex(product => product.id === latestElement);
+    while(index !== -1) {
+      latestElement++;
+      index = productsData.findIndex(product => product.id === latestElement);
+    }
+    newProduct.id = latestElement;
+  }
+
+  if (!newProduct.code) {
+    newProduct.code = generateRandomString();
   }
   productsData.push(newProduct as unknown as Product);
   fs.writeFileSync(productsFilePath, JSON.stringify({ data: productsData }, null, 2));
